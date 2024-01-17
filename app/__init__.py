@@ -9,6 +9,10 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # Initialize Flask extensions here
+    from app.main import bp as main_bp
+    # register this main blueprint for Flask
+    # to treat as part of the application.
+    app.register_blueprint(main_bp)
 
     # Register blueprints here
 
